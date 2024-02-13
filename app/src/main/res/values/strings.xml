@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">My Application</string>
+<string-array name="whatever">
+    <item>cow</item>
+    <item>alepent</item>
+    <item> tiger</item>
+    <item> cat</item>
+    <item>bull</item>
+    <item>ship</item>
+    <item>goat</item>
+    <item>fish</item>
+    <item></item>
+    <item></item>
+    <item>hamster</item>
+    <item>parrot</item>
+    <item>pig</item>
+    <item>bee</item>
+    <item>horse</item>
+</string-array>
+</resources>
