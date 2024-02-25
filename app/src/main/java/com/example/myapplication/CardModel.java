@@ -1,10 +1,10 @@
 package com.example.myapplication;
 
-public class cardmodel {
+public class CardModel {
     String text;
     int imag;
 
-    public cardmodel(String text, int imag) {
+    public CardModel(String text, int imag) {
         this.text = text;
         this.imag = imag;
     }
