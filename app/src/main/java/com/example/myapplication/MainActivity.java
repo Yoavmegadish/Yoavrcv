@@ -5,9 +5,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.ArrayList;
-
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 public class MainActivity extends AppCompatActivity {
     int[] images = {R.drawable.icon25,R.drawable.icon26,
             R.drawable.icon27,R.drawable.icon28,R.drawable.icon29,R.drawable.icon30,
@@ -24,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
         setUpModel();
        adapter = new CardAdapter(this,models);
         RecyclerView recyclerView = findViewById(R.id.Rcv);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            recyclerView.setAdapter(adapter);
     }
 
     private void setUpModel() {

@@ -34,8 +34,10 @@ ArrayList<CardModel> models;
 
     @Override
     public void onBindViewHolder(@NonNull CardAdapter.MyViewHolder myViewHolder, int position) {
-        myViewHolder.text.setText(models.get(position).text);
-        myViewHolder.iv.setImageResource(models.get(position).imag);
+        if (models != null && position < models.size()) {
+            myViewHolder.text.setText(models.get(position).getText());
+            myViewHolder.iv.setImageResource(models.get(position).getImag());
+        }
     }
 
     @Override
@@ -50,6 +52,7 @@ ArrayList<CardModel> models;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             text=itemView.findViewById(R.id.textView);
+            iv = itemView.findViewById(R.id.imageView3);
         }
     }
 }
