@@ -36,6 +36,7 @@ ArrayList<CardModel> models;
     public void onBindViewHolder(@NonNull CardAdapter.MyViewHolder myViewHolder, int position) {
         if (models != null && position < models.size()) {
             myViewHolder.text.setText(models.get(position).getText());
+            myViewHolder.text2.setText(models.get(position).getText2());
             myViewHolder.iv.setImageResource(models.get(position).getImag());
         }
     }
@@ -46,6 +47,7 @@ ArrayList<CardModel> models;
 
     }
     public static class MyViewHolder extends RecyclerView.ViewHolder{
+        TextView text2;
         TextView text;
     ImageView iv;
 
@@ -53,6 +55,7 @@ ArrayList<CardModel> models;
             super(itemView);
             text=itemView.findViewById(R.id.textView);
             iv = itemView.findViewById(R.id.imageView3);
+            text2 = itemView.findViewById(R.id.textView2);
         }
     }
 }

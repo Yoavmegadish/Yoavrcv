@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.icon39,R.drawable.icon40,R.drawable.icon41,R.drawable.icon42,
             R.drawable.icon43,R.drawable.icon44};
     ArrayList<CardModel> models=new ArrayList<>();
+    ArrayList<CardModel> models2=new ArrayList<>();
     CardAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +31,15 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.Rcv);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
             recyclerView.setAdapter(adapter);
+
     }
 
     private void setUpModel() {
 String []text = getResources().getStringArray(R.array.whatever);
+        String []text2 = getResources().getStringArray(R.array.whatever2);
 for(int i=0;i<text.length;i++)
 {
-    models.add(new CardModel(text[i],images[i]));
+    models.add(new CardModel(text[i],images[i],text2[i]));
 }
     }
 }
