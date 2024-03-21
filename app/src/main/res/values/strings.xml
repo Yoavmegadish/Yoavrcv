@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">My Application</string>
-<string-array name="whatever">
+    <string name="im_new">im new</string>
+    <string-array name="whatever">
     <item>cow</item>
     <item>alepent</item>
     <item> tiger</item>

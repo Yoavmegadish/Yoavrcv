@@ -16,11 +16,12 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.MyViewHolder>
 {
 Context context;
 ArrayList<CardModel> models;
+AdapterInterface adapterInterface;
 
-
-    public CardAdapter(Context context, ArrayList<CardModel> models) {
+    public CardAdapter(Context context, ArrayList<CardModel> models,AdapterInterface adapterInterface) {
         this.context = context;
         this.models = models;
+        this.adapterInterface = adapterInterface;
     }
 
     @NonNull
@@ -28,7 +29,7 @@ ArrayList<CardModel> models;
     public CardAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.row_layout,parent,false);
-        return new MyViewHolder(view);
+        return new MyViewHolder(view, adapterInterface);
 
     }
 
@@ -51,11 +52,18 @@ ArrayList<CardModel> models;
         TextView text;
     ImageView iv;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView, AdapterInterface adapterInterface) {
             super(itemView);
             text=itemView.findViewById(R.id.textView);
             iv = itemView.findViewById(R.id.imageView3);
             text2 = itemView.findViewById(R.id.textView2);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    adapterInterface.onItemClicked(getAdapterPosition());
+                }
+            });
         }
     }
 }
